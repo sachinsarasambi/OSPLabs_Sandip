@@ -1,0 +1,82 @@
+.nav {
+    background: blueviolet;
+    justify-content: space-between;
+}
+
+ul {
+    padding: 2px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.first {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.second {
+    margin-right: 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+#name {
+    background-color: white;
+    border-radius: 10px;
+    width: auto;
+    padding: 5px;
+}
+
+#three {
+    background-color: rgb(112, 112, 254);
+    border-radius: 10px;
+    padding-left: 28px;
+
+
+}
+
+.menu {
+    color: white;
+}
+
+mat-sidenav-container {
+    height: 91%;
+}
+
+mat-card {
+    width: 45%;
+    margin: 5px 5px;
+}
+
+.img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.inputbox {
+    float: right;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+@media screen and (max-width:767px) {
+    mat-card {
+        width: unset !important
+    }
+
+}

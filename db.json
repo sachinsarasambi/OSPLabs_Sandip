@@ -1,0 +1,40 @@
+{
+  "patient": [
+    {
+      "firstname": "uttam",
+      "lastname": "shendage",
+      "phone": "",
+      "email": "",
+      "address1": "pune",
+      "address2": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "id": 1
+    },
+    {
+      "firstname": "Sachin",
+      "lastname": "Sarsambi",
+      "phone": "9875554545",
+      "email": "sachinsarasambi@gmail.com",
+      "address1": "pune",
+      "address2": "",
+      "city": "solapur",
+      "state": "maharashtra",
+      "zip": "413305",
+      "id": 2
+    },
+    {
+      "firstname": "Sachin",
+      "lastname": "Sarsambi",
+      "phone": "9875554545",
+      "email": "sachinsarasambi@gmail.com",
+      "address1": "Sangiola",
+      "address2": "",
+      "city": "solapur",
+      "state": "maharashtra",
+      "zip": "413305",
+      "id": 3
+    }
+  ] 
+}

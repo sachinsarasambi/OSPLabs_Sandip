@@ -1,0 +1,138 @@
+<nav class="nav">
+  <ul class="first">
+    <li id="name">
+      Patient System
+    </li>&nbsp;&nbsp;&nbsp;
+    <li class="menu">
+      <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+    </li>
+  </ul>
+  <ul class="second">
+    <li>
+      <mat-icon>email</mat-icon>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+      <mat-icon>notifications</mat-icon>
+    </li>&nbsp;&nbsp;&nbsp;
+    <li>
+      <mat-icon>account_circle</mat-icon>
+    </li>
+  </ul>
+</nav>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-nav-list>
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/015/409/989/small/elegant-man-in-business-suit-with-badge-man-business-avatar-profile-picture-illustration-isolated-vector.jpg"
+        alt="Avatar" class="img">
+      <h5 class="my-2 logo">Lorem lpsum <br>
+        Admin</h5>
+      <a mat-list-item routerLink="#" id="three">Patient</a>
+      <a mat-list-item routerLink="#"> <mat-icon>account_circle</mat-icon>Logout</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color='LightGray'>
+      <span>patient-DashBord</span>
+    </mat-toolbar>
+
+    <div class="row d-flex">
+      <mat-card class="example-card">
+
+        <mat-card-content>
+          <mat-card-title>Patient Details</mat-card-title>
+          <form [formGroup]="adddetails">
+            <div class="row">
+              <div class="col">
+                <label for="phone">First name</label>
+                <input type="text" class="form-control" aria-label="First name" formControlName="firstname">
+              </div>
+              <div class="col">
+                <label for="phone">Last name</label>
+                <input type="text" class="form-control" aria-label="Last name" formControlName="lastname">
+              </div>
+              <div class="col">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" aria-label="phone" formControlName="phone">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control" aria-label="email" formControlName="email">
+              </div>
+              <div class="col">
+                <label for="Address1">Address Line 1</label>
+                <input type="text" class="form-control" aria-label="Address1" formControlName="address1">
+              </div>
+              <div class="col">
+                <label for="Address2">Address Line 2</label>
+                <input type="text" class="form-control" aria-label="Address2" formControlName="address2">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="city">City</label>
+                <input type="text" class="form-control" aria-label="city" formControlName="city">
+              </div>
+              <div class="col">
+                <label for="state">State</label>
+                <input type="text" class="form-control" aria-label="state" formControlName="state">
+              </div>
+              <div class="col">
+                <label for="Zip">Zip</label>
+                <input type="text" class="form-control" aria-label="Zip" formControlName="zip">
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="btn btn-success" (click)="onCreateUser(adddetails.value)" mat-button>{{actionBtn}}</button>
+          
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="example-card" *ngIf="userData && userData.length >= 1">
+        <mat-card-header>
+          <div class="row">
+            <div class="col-5">
+              <h1>patient List</h1>
+            </div>
+            <div class="col-7 text-right">
+              <input type="text" id="searchBar" [(ngModel)]="searchName" placeholder="Search By First Name"
+                class="form-control w-100">
+            </div>
+          </div>
+
+        </mat-card-header>
+        <mat-card-content>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Address</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userData | filter:searchName">
+                <td>{{user?.firstname}}</td>
+                <td>{{user?.lastname}}</td>
+                <td>{{user?.address1}}</td>
+                <td>
+                  <mat-icon>remove_red_eye</mat-icon>
+                  <mat-icon (click)="onedit(user)">edit</mat-icon>
+                  <mat-icon (click)="onDelete(user?.id)">delete_forever</mat-icon>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
